@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Page_Object_HT3" />
+        <module name="TestNG_parallel_execution_HT4_" />
       </profile>
     </annotationProcessing>
   </component>

@@ -57,5 +57,5 @@ public class SearchResultsPage extends BasePage{
     public WebElement getPrice() { return price; }
     public int getTextFromPrice() {return Integer.parseInt(price.getText());}
 
-    public SearchResultsPage(WebDriver driver) { super(driver); }
+    public SearchResultsPage(WebDriver driver) { super(); }
 }

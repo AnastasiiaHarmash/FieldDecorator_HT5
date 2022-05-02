@@ -13,7 +13,7 @@ public class HomePageRozetka extends BasePage{
     private WebElement searchButton;
 
     public HomePageRozetka(WebDriver driver) {
-        super(driver);
+        super();
     }
 
     public boolean isSearchFieldVisible() { return searchField.isDisplayed(); }

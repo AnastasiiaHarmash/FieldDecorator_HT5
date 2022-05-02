@@ -2,10 +2,11 @@ package com.epam.lab;
 
 import com.epam.lab.page.HomePageRozetka;
 import com.epam.lab.page.SearchResultsPage;
+import com.epam.lab.util.DriverFactoryManager;
 import com.epam.lab.util.PropertiesReader;
+import com.epam.lab.util.TestListener;
 import com.epam.lab.util.XMLToObject;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.xml.sax.SAXException;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 
+@Listeners({TestListener.class})
 public class SmokeTest {
 
     private WebDriver driver;
@@ -35,21 +37,22 @@ public class SmokeTest {
         logger.info("BeforeTest in progress.");
         PropertiesReader propertiesReader = new PropertiesReader();
         System.setProperty(propertiesReader.getDriverName(), propertiesReader.getDriverLocation());
+
     }
 
     @BeforeMethod
     public void testsSetUp() {
         logger.info("BeforeMethod in progress.");
+        DriverFactoryManager.setDriver();
         PropertiesReader propertiesReader = new PropertiesReader();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(propertiesReader.getUrl());
+        DriverFactoryManager.getDriver().manage().window().maximize();
+        DriverFactoryManager.getDriver().get(propertiesReader.getUrl());
     }
 
    @AfterMethod
     public void tearDown() {
         logger.info("AfterMethod, driver close.");
-        driver.close();
+        DriverFactoryManager.closeDriver();
     }
 
     @DataProvider
@@ -63,7 +66,7 @@ public class SmokeTest {
         return xmlToObject.testDataMassive();
     }
 
-    @Test(dataProvider = "testData", invocationCount = 1)
+    @Test(dataProvider = "testData", invocationCount = 5, threadPoolSize = 3)
     public void smokeTest(String product, String brand, String sum) throws InterruptedException {
         logger.info("smokeTest is running");
         HomePageRozetka homePageRozetka = new HomePageRozetka(driver);
@@ -78,7 +81,7 @@ public class SmokeTest {
         logger.info("Enter brand to search field");
         searchResultsPage.enterTextToSearchBrandField(brand);
         //redneck code
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         searchResultsPage.waitVisibilityOfElement(DEFAULT_TIMEOUT, searchResultsPage.getListCheckBox());
         Assert.assertTrue(searchResultsPage.isListCheckBoxVisible());
         Assert.assertTrue(searchResultsPage.isListCheckBoxEnabled());
@@ -89,6 +92,8 @@ public class SmokeTest {
         searchResultsPage.clickFilterDropDown();
         searchResultsPage.clickFromExpensiveToCheap();
         searchResultsPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+        //redneck code
+        Thread.sleep(3000);
         searchResultsPage.waitVisibilityOfElement(DEFAULT_TIMEOUT, searchResultsPage.isCartIconVisible());
         logger.info("Click add to cart");
         searchResultsPage.clickListOfCartIcons();

@@ -1,5 +1,6 @@
 package com.epam.lab.page;
 
+import com.epam.lab.util.DriverFactoryManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,10 +11,10 @@ import java.time.Duration;
 
 public class BasePage {
 
-    protected WebDriver driver;
+    protected WebDriver driver = DriverFactoryManager.getDriver();
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
+    public BasePage() {
+        WebDriver driver = DriverFactoryManager.getDriver();
         PageFactory.initElements(driver, this);
     }
 

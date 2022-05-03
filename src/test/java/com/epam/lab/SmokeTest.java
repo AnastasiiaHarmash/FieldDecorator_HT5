@@ -23,6 +23,7 @@ public class SmokeTest {
     private static final Logger logger = Logger.getLogger(SmokeTest.class.getName());
     private static final long DEFAULT_TIMEOUT = 60;
     private static XMLToObject xmlToObject;
+    PropertiesReader propertiesReader = new PropertiesReader();
 
     static {
         try {
@@ -35,7 +36,6 @@ public class SmokeTest {
     @BeforeTest
     public void profileSetUp() {
         logger.info("BeforeTest in progress.");
-        PropertiesReader propertiesReader = new PropertiesReader();
         System.setProperty(propertiesReader.getDriverName(), propertiesReader.getDriverLocation());
 
     }
@@ -44,7 +44,6 @@ public class SmokeTest {
     public void testsSetUp() {
         logger.info("BeforeMethod in progress.");
         DriverFactoryManager.setDriver();
-        PropertiesReader propertiesReader = new PropertiesReader();
         DriverFactoryManager.getDriver().manage().window().maximize();
         DriverFactoryManager.getDriver().get(propertiesReader.getUrl());
     }

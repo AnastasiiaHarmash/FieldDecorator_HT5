@@ -10,6 +10,9 @@
             </class>
         </classes>
     </test>
+    <listeners>
+        <listener class-name="com.epam.lab.util.TestListener"/>
+    </listeners>
 </suite>
 
 

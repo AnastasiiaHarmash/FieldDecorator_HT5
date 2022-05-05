@@ -3,13 +3,17 @@ package com.epam.lab.util;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.logging.Logger;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 
 public class PropertiesReader {
-    final static Logger logger = Logger.getLogger(PropertiesReader.class.getName());
+    private static final Logger logger = LogManager.getLogger(PropertiesReader.class);
     Properties property = new Properties();
 
     public PropertiesReader() {
+        BasicConfigurator.configure();
         FileInputStream fis;
         try {
             fis = new FileInputStream("src/main/resources/config.properties");

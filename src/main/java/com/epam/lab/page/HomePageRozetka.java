@@ -12,7 +12,7 @@ public class HomePageRozetka extends BasePage{
     @FindBy(xpath = "//button[@class='button button_color_green button_size_medium search-form__submit ng-star-inserted']")
     private WebElement searchButton;
 
-    public HomePageRozetka(WebDriver driver) {
+    public HomePageRozetka() {
         super();
     }
 

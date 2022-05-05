@@ -10,17 +10,17 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.xml.sax.SAXException;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.logging.Logger;
-
 
 @Listeners({TestListener.class})
 public class SmokeTest {
 
-    private WebDriver driver;
-    private static final Logger logger = Logger.getLogger(SmokeTest.class.getName());
+    private static final Logger logger = LogManager.getLogger(SmokeTest.class);
     private static final long DEFAULT_TIMEOUT = 60;
     private static XMLToObject xmlToObject;
     PropertiesReader propertiesReader = new PropertiesReader();
@@ -35,6 +35,7 @@ public class SmokeTest {
 
     @BeforeTest
     public void profileSetUp() {
+        BasicConfigurator.configure();
         logger.info("BeforeTest in progress.");
         System.setProperty(propertiesReader.getDriverName(), propertiesReader.getDriverLocation());
 
@@ -42,7 +43,7 @@ public class SmokeTest {
 
     @BeforeMethod
     public void testsSetUp() {
-        logger.info("BeforeMethod in progress.");
+        logger.trace("BeforeMethod in progress.");
         DriverFactoryManager.setDriver();
         DriverFactoryManager.getDriver().manage().window().maximize();
         DriverFactoryManager.getDriver().get(propertiesReader.getUrl());
@@ -68,12 +69,12 @@ public class SmokeTest {
     @Test(dataProvider = "testData", invocationCount = 5, threadPoolSize = 3)
     public void smokeTest(String product, String brand, String sum) throws InterruptedException {
         logger.info("smokeTest is running");
-        HomePageRozetka homePageRozetka = new HomePageRozetka(driver);
+        HomePageRozetka homePageRozetka = new HomePageRozetka();
         homePageRozetka.waitForPageLoadComplete(DEFAULT_TIMEOUT);
         logger.info("Enter text to text field");
         homePageRozetka.enterTextToSearchField(product);
         homePageRozetka.clickSearchButton();
-        SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
+        SearchResultsPage searchResultsPage = new SearchResultsPage();
         searchResultsPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
         searchResultsPage.waitVisibilityOfElement(DEFAULT_TIMEOUT, searchResultsPage.getSearchBrandField());
         Assert.assertTrue(searchResultsPage.isSearchBrandFieldVisible());

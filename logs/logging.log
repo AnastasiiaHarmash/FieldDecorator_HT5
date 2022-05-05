@@ -1,0 +1,59 @@
+2022-05-06 00:23:46 INFO  TestListener:40 - I am in onStart method 1 on Fri May 06 00:23:46 EEST 2022
+2022-05-06 00:23:46 INFO  SmokeTest:39 - BeforeTest in progress.
+2022-05-06 00:23:46 INFO  SmokeTest:65 - Running dataProvider testData
+2022-05-06 00:23:46 INFO  SmokeTest:65 - Running dataProvider testData
+2022-05-06 00:23:46 INFO  SmokeTest:65 - Running dataProvider testData
+2022-05-06 00:23:56 INFO  TestListener:20 - I am in com.epam.lab.SmokeTest method smokeTest start
+2022-05-06 00:23:56 INFO  SmokeTest:71 - smokeTest is running
+2022-05-06 00:24:09 INFO  TestListener:20 - I am in com.epam.lab.SmokeTest method smokeTest start
+2022-05-06 00:24:09 INFO  SmokeTest:71 - smokeTest is running
+2022-05-06 00:24:09 INFO  SmokeTest:74 - Enter text to text field
+2022-05-06 00:24:09 INFO  SmokeTest:74 - Enter text to text field
+2022-05-06 00:24:16 INFO  TestListener:20 - I am in com.epam.lab.SmokeTest method smokeTest start
+2022-05-06 00:24:16 INFO  SmokeTest:71 - smokeTest is running
+2022-05-06 00:24:16 INFO  SmokeTest:74 - Enter text to text field
+2022-05-06 00:24:22 INFO  SmokeTest:81 - Enter brand to search field
+2022-05-06 00:24:26 INFO  SmokeTest:81 - Enter brand to search field
+2022-05-06 00:24:26 INFO  SmokeTest:88 - Click check box
+2022-05-06 00:24:31 INFO  SmokeTest:88 - Click check box
+2022-05-06 00:24:35 INFO  SmokeTest:91 - Click filter dropdown
+2022-05-06 00:24:36 INFO  SmokeTest:81 - Enter brand to search field
+2022-05-06 00:24:38 INFO  SmokeTest:91 - Click filter dropdown
+2022-05-06 00:24:41 INFO  SmokeTest:88 - Click check box
+2022-05-06 00:24:42 INFO  SmokeTest:98 - Click add to cart
+2022-05-06 00:24:43 INFO  SmokeTest:102 - Click on cart button
+2022-05-06 00:24:44 INFO  TestListener:24 - I am in com.epam.lab.SmokeTest method smokeTest succeed
+2022-05-06 00:24:44 INFO  SmokeTest:54 - AfterMethod, driver close.
+2022-05-06 00:24:45 INFO  SmokeTest:65 - Running dataProvider testData
+2022-05-06 00:24:47 INFO  SmokeTest:98 - Click add to cart
+2022-05-06 00:24:49 INFO  SmokeTest:102 - Click on cart button
+2022-05-06 00:24:51 INFO  TestListener:24 - I am in com.epam.lab.SmokeTest method smokeTest succeed
+2022-05-06 00:24:51 INFO  SmokeTest:54 - AfterMethod, driver close.
+2022-05-06 00:24:51 INFO  SmokeTest:91 - Click filter dropdown
+2022-05-06 00:24:54 INFO  TestListener:20 - I am in com.epam.lab.SmokeTest method smokeTest start
+2022-05-06 00:24:54 INFO  SmokeTest:71 - smokeTest is running
+2022-05-06 00:24:54 INFO  SmokeTest:74 - Enter text to text field
+2022-05-06 00:24:56 INFO  SmokeTest:65 - Running dataProvider testData
+2022-05-06 00:25:03 INFO  SmokeTest:98 - Click add to cart
+2022-05-06 00:25:08 INFO  SmokeTest:102 - Click on cart button
+2022-05-06 00:25:08 INFO  TestListener:20 - I am in com.epam.lab.SmokeTest method smokeTest start
+2022-05-06 00:25:08 INFO  SmokeTest:71 - smokeTest is running
+2022-05-06 00:25:08 INFO  SmokeTest:74 - Enter text to text field
+2022-05-06 00:25:09 INFO  SmokeTest:81 - Enter brand to search field
+2022-05-06 00:25:09 INFO  TestListener:24 - I am in com.epam.lab.SmokeTest method smokeTest succeed
+2022-05-06 00:25:09 INFO  SmokeTest:54 - AfterMethod, driver close.
+2022-05-06 00:25:13 INFO  SmokeTest:88 - Click check box
+2022-05-06 00:25:17 INFO  SmokeTest:91 - Click filter dropdown
+2022-05-06 00:25:21 INFO  SmokeTest:81 - Enter brand to search field
+2022-05-06 00:25:22 INFO  SmokeTest:98 - Click add to cart
+2022-05-06 00:25:23 INFO  SmokeTest:102 - Click on cart button
+2022-05-06 00:25:24 INFO  TestListener:24 - I am in com.epam.lab.SmokeTest method smokeTest succeed
+2022-05-06 00:25:24 INFO  SmokeTest:54 - AfterMethod, driver close.
+2022-05-06 00:25:25 INFO  SmokeTest:88 - Click check box
+2022-05-06 00:25:27 INFO  SmokeTest:91 - Click filter dropdown
+2022-05-06 00:25:32 INFO  SmokeTest:98 - Click add to cart
+2022-05-06 00:25:33 INFO  SmokeTest:102 - Click on cart button
+2022-05-06 00:25:33 INFO  TestListener:24 - I am in com.epam.lab.SmokeTest method smokeTest succeed
+2022-05-06 00:25:33 INFO  SmokeTest:54 - AfterMethod, driver close.
+2022-05-06 00:25:38 INFO  TestListener:44 - I am in onFinish method 1 on Fri May 06 00:25:38 EEST 2022
+2022-05-06 00:25:38 INFO  TestListener:45 - ------------------------------------------------------------------------------------------

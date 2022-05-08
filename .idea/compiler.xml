@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Page_Object_HT3" />
         <module name="TestNG_parallel_execution_HT4_" />
+        <module name="FieldDecorator_HT5" />
       </profile>
     </annotationProcessing>
   </component>
